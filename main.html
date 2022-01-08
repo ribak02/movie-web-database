@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            tbody tr:nth-child(odd) {
+                background-color: rgba(17, 16, 17, 0.075);
+            }
+            table, th, td {
+                border-bottom: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+        <title>Movie List</title>
+    </head>
+    <body>
+        <h1>Movie List</h1>
+        <div style="padding-bottom: 20px;">
+            <button onclick="location.href = '/createHTML';">Add Movie</button>
+        </div>
+        <div>
+            <table id='table'>
+                <thead id='thead'>
+                    <tr>
+                        <th></th>
+                        <th>Director Name</th>
+                        <th>Actor 2 Name</th>
+                        <th>Genres</th>
+                        <th>Actor 1 Name</th>
+                        <th>Movie Title</th>
+                        <th>Actor 3 Name</th>
+                        <th>Plot Keywords</th>
+                        <th>Movie IMDB Link</th>
+                    </tr>
+                </thead>
+                <tbody id='tbody'>
+                </tbody>
+            </table>
+        </div>
+        <script src="client.js"></script>
+    </body>
+</html>

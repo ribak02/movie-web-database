@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Entry</title>
+    </head>
+    <body>
+        <h1>Add Entry</h1>
+        <form id='form' action="/create" method="POST">
+            <label for="dn">Director Name</label><br>
+            <input type="text" name="dn"><br>
+            <label for="a2">Actor 2 Name</label><br>
+            <input type="text" name='a2'><br>
+            <label for='g'>Genre</label><br>
+            <input type='text' name='g'><br>
+            <label for='a1'>Actor 1 Name</label><br>
+            <input type="text" name='a1'><br>
+            <label for='mt'>Movie Title</label><br>
+            <input type="text" name="mt"><br>
+            <label for="a3">Actor 3 Name</label><br>
+            <input type="text" name="a3"><br>
+            <label for='pk'>Plot Keywords</label><br>
+            <input type="text" name="pk"><br>
+            <label for='ml'>Movie IMDB Link</label><br>
+            <input type="text" name='ml'><br>
+            <input type="submit" name='submitbtn'>
+        </form>
+        <label id='error'></label>
+        <script>
+            const form = document.getElementById("form");
+            form.addEventListener('submit', (event) => {
+                let failed = false;
+                let d = form.elements;
+                let entry = [d.dn.value, d.a2.value, d.g.value, d.a1.value, d.mt.value, d.a3.value, d.pk.value, d.ml.value];
+                for (let i=0;i<entry.length;i++) {
+                    if (entry[i] == '') {
+                        failed = true;
+                    }
+                }
+                if (failed) {
+                    window.alert("You have not filled in all fields.")
+                }
+                else {
+                    form.submit();
+                }
+                event.preventDefault();
+            });
+        </script>
+    </body>
+</html>
